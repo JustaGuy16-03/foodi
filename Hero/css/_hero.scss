@@ -1,0 +1,135 @@
+@mixin flexBox($gap, $direction, $justify, $align) {
+  display: flex;
+  gap: $gap;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  background: url("/bg.svg");
+  background-size: cover;
+}
+
+nav {
+  background-color: #df1212;
+  height: 10vh;
+  width: 100%;
+}
+
+.container {
+  max-width: min(90%, 1400px);
+  margin: auto;
+}
+
+.hero {
+  padding: var(--hero-padding) 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .hero-copy {
+    @include flexBox(1rem, column, center, flex-start);
+
+    h1 {
+      font-size: var(--slogan);
+      min-width: max-content;
+    }
+    p {
+      font-size: var(--paragraph);
+    }
+
+    .buttons_wrapper {
+      width: 70%;
+      @include flexBox(2rem, row, space-between, center);
+
+      .action_b {
+        font-size: var(--button-0);
+        font-weight: 600;
+        text-transform: capitalize;
+        color: $web-red;
+        min-width: max-content;
+        cursor: pointer;
+      }
+
+      button {
+        padding: 0.6rem 2rem;
+        border: 2px solid $web-red;
+        border-radius: 4px;
+        background: none;
+      }
+
+      div {
+        @include flexBox(0, row, flex-start, center);
+
+        i {
+          font-size: var(--button-1);
+          font-weight: normal;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .hero-image {
+    @include flexBox(0, row, flex-end, center);
+
+    img {
+      width: var(--hero-img);
+      filter: drop-shadow(10px 10px 50px #616161);
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  header {
+    background: url("/mobilebg.svg");
+    background-size: cover;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    .hero-copy {
+      align-items: center;
+      text-align: center;
+
+      .buttons_wrapper {
+        justify-content: center;
+      }
+    }
+
+    .hero-image {
+      justify-content: center;
+
+      img {
+        margin: 5rem 0 3rem 0;
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    .hero-copy {
+      margin-top: 20px;
+
+      .buttons_wrapper {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+      }
+    }
+
+    .hero-image {
+      img {
+        margin: 2rem 0 1rem 0;
+        width: 90%;
+      }
+    }
+  }
+}
