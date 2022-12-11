@@ -1,0 +1,154 @@
+$primary-ff: "Open Sans", sans-serif;
+$secondary-ff: "Montserrat", sans-serif;
+$web-red: #c91212;
+$web-dark: #363636;
+$web-black: #585858;
+$web-green: #1fbd1a;
+
+:root {
+  --slogan: clamp(1.63rem, calc(1.32rem + 1.52vw), 2.5rem);
+  --paragraph: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
+  --paragraph-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  --button-size: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  --youtube-icon-size: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
+  --hero-img: clamp(6.25rem, calc(-2.45rem + 43.48vw), 31.25rem);
+  --hero-padding: clamp(0.63rem, calc(-1.33rem + 9.78vw), 6.25rem);
+}
+
+@mixin flexBox($gap, $direction, $justify, $align) {
+  display: flex;
+  gap: $gap;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $primary-ff;
+}
+::selection {
+  background-color: #74c600;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 430px;
+}
+
+.container {
+  max-width: min(90%, 1400px);
+  margin: auto;
+}
+
+.title-holder {
+  @include flexBox(0, column, center, center);
+  margin: 8% 0 4% 0;
+  text-align: center;
+
+  p {
+    font-size: var(--paragraph);
+    text-transform: uppercase;
+    color: $web-black;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  h1 {
+    font-size: var(--slogan);
+    font-weight: 400;
+    color: $web-dark;
+    text-transform: capitalize;
+    min-width: 60%;
+
+    span {
+      color: $web-green;
+    }
+  }
+}
+
+@import "./nav.scss";
+@import "./hero.scss";
+@import "./about.scss";
+
+@media (max-width: 1000px) {
+  #about {
+    .about-us-section {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+
+      .about-img {
+        justify-content: center;
+      }
+
+      .about-paragraph {
+        align-items: center;
+
+        p {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .hero {
+    grid-template-columns: 1fr;
+
+    .hero-copy {
+      align-items: center;
+      text-align: center;
+
+      .buttons_wrapper {
+        justify-content: center;
+      }
+    }
+
+    .hero-image {
+      justify-content: center;
+
+      img {
+        margin: 5rem 0 3rem 0;
+        width: 70%;
+      }
+    }
+  }
+
+  #about {
+    .about-us-section {
+      .about-img {
+        img {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    .hero-copy {
+      margin-top: 20px;
+
+      .buttons_wrapper {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+      }
+    }
+
+    .hero-image {
+      img {
+        margin: 2rem 0 1rem 0;
+        width: 90%;
+      }
+    }
+  }
+}

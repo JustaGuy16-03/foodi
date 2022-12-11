@@ -1,0 +1,27 @@
+#footer {
+    background-color: rgb(37, 37, 37);
+    color: rgb(240, 240, 240);
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+}
+
+footer h4 {
+  margin-bottom: 24px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.icons .fa {
+  color: #ff6f65;
+  margin: 0 13px;
+  cursor: pointer;
+  padding: 18px 0;
+}
+
+.fa-heart-o {
+  color: #ff6f65;
+}

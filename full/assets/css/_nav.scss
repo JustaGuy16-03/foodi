@@ -1,0 +1,136 @@
+// nav {
+//     display: flex;
+//     justify-content: center;
+//     background-color: #fff;
+//     box-shadow: 0px 0px 4px #bebebe;
+//   }
+  
+  .nav-bar {
+    width: 100%;
+    padding: 20px 0;
+    @include flexBox(1rem, row, space-between, center);
+  
+    .left-side {
+      img {
+        width: 8rem;
+      }
+    }
+  
+    .right-side {
+      @include flexBox(3rem, row, space-between, center);
+      width: 85%;
+  
+      ul {
+        @include flexBox(3rem, row, space-between, center);
+  
+        li {
+          list-style: none;
+  
+          a {
+            text-decoration: none;
+            color: $web-dark;
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            font-weight: 500;
+  
+            &:hover {
+              color: $web-green;
+            }
+  
+            &::after {
+              content: "";
+              width: 0%;
+              height: 3px;
+              background: $web-green;
+              display: block;
+              transform-origin: right;
+              transform: scaleX(0);
+              margin: auto;
+              transition: transform 700ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+  
+            &:hover::after {
+              transform: scalex(1);
+              transform-origin: left;
+              width: 100%;
+            }
+          }
+        }
+      }
+  
+      .nav-btns {
+        @include flexBox(2rem, row, space-between, center);
+        font-size: 2.3rem;
+        i {
+          color: $web-dark;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 1230px) {
+    .nav-bar {
+      .left-side {
+        img {
+          width: 7.5rem;
+        }
+      }
+  
+      .right-side {
+        ul {
+          gap: 2rem;
+          li {
+            a {
+              font-size: 1rem;
+            }
+          }
+        }
+  
+        .nav-btns {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .nav-bar {
+      flex-wrap: wrap;
+  
+      .left-side {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+  
+      .right-side {
+        width: 100%;
+      }
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .nav-bar {
+      .left-side {
+        img {
+          width: clamp(5rem, calc(2.89rem + 10.53vw), 7.5rem);
+        }
+      }
+      .right-side {
+        ul {
+          gap: 1.2rem;
+          li {
+            a {
+              font-size: clamp(0.63rem, calc(0.31rem + 1.58vw), 1rem);
+            }
+          }
+        }
+  
+        .nav-btns {
+          font-size: clamp(0.88rem, calc(0.35rem + 2.63vw), 1.5rem);
+          gap: 1.5rem;
+        }
+      }
+    }
+  }
+  
