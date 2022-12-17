@@ -1,0 +1,48 @@
+nav {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.navbar-brand {
+  padding-right: 30px;
+}
+
+.nav-item {
+  padding: 0 10px;
+}
+
+form button {
+  border: none;
+  margin-left: 20px;
+  background: none;
+}
+
+form button i {
+  font-size: 35px;
+  color: #4a4a4b;
+}
+
+.navbar-toggler {
+  border: none;
+  background: none;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+  border: none;
+}
+.navbar-toggler i {
+  font-size: 40px;
+}
+
+.nav_links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+  .nav_links {
+    flex-direction: column;
+  }
+}

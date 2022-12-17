@@ -1,0 +1,177 @@
+:root {
+  --slogan: clamp(1.63rem, calc(1.32rem + 1.52vw), 2.5rem);
+  --paragraph: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
+  --button-size: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  --youtube-icon-size: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
+  --hero-img: clamp(6.25rem, calc(-2.45rem + 43.48vw), 31.25rem);
+  --hero-padding: clamp(0.63rem, calc(-1.33rem + 9.78vw), 6.25rem);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  min-width: 325px;
+}
+
+header {
+  background: #f0f0f0;
+  background-size: cover;
+  overflow: hidden;
+}
+header .follow-us-on {
+  z-index: 100;
+  display: flex;
+  gap: 0;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header .follow-us-on div {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #fff;
+  padding: 0.2rem 1rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0 0px 15px #b6b6b6;
+}
+header .follow-us-on div .bi {
+  font-size: 2.5rem;
+  color: #333333;
+  transition: all 0.15s ease;
+}
+header .follow-us-on div .bi-facebook:hover {
+  color: #3b5998;
+}
+header .follow-us-on div .bi-whatsapp:hover {
+  color: #25d366;
+}
+header .follow-us-on div .bi-twitter:hover {
+  color: #00acee;
+}
+
+nav {
+  width: 100%;
+  background: #f0f0f0;
+}
+
+.hero {
+  padding: clamp(8.13rem, 7.47rem + 3.26vw, 10rem) 15px var(--hero-padding) 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.hero .hero-copy {
+  display: flex;
+  gap: 0.8rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.hero .hero-copy h1 {
+  font-size: var(--slogan);
+  font-weight: 500;
+  width: 80%;
+  text-transform: capitalize;
+}
+.hero .hero-copy p {
+  font-size: var(--paragraph);
+  color: #333333;
+}
+.hero .hero-copy .buttons_wrapper {
+  margin-top: 10px;
+  width: 55%;
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero .hero-copy .buttons_wrapper .action_b {
+  font-size: var(--paragraph);
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #c91212;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.hero .hero-copy .buttons_wrapper .action_b:hover {
+  opacity: 0.9;
+}
+.hero .hero-copy .buttons_wrapper .order-btn {
+  z-index: 1;
+  padding: 0.6rem 2rem;
+  border: 2px solid #c91212;
+  border-radius: 24px;
+  background: #c91212;
+  color: #fcfcfc;
+}
+.hero .hero-copy .buttons_wrapper .order-btn:hover {
+  box-shadow: 0px 1px 10px #ff8989;
+}
+.hero .hero-copy .buttons_wrapper div {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.hero .hero-copy .buttons_wrapper div i {
+  font-size: var(--youtube-icon-size);
+  font-weight: normal;
+}
+.hero .hero-image {
+  display: flex;
+  gap: 0;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.hero .hero-image img {
+  width: var(--hero-img);
+  filter: drop-shadow(10px 10px 30px rgba(97, 97, 97, 0.6156862745));
+}
+
+@media (max-width: 750px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero .hero-copy {
+    align-items: center;
+    text-align: center;
+  }
+  .hero .hero-copy .buttons_wrapper {
+    justify-content: center;
+  }
+  .hero .hero-image {
+    justify-content: center;
+  }
+  .hero .hero-image img {
+    margin: 5rem 0 3rem 0;
+    width: 70%;
+  }
+}
+@media (max-width: 400px) {
+  .hero .hero-copy {
+    margin-top: 20px;
+  }
+  .hero .hero-copy .buttons_wrapper {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  .hero .hero-image img {
+    margin: 2rem 0 1rem 0;
+    width: 90%;
+  }
+}/*# sourceMappingURL=style.css.map */

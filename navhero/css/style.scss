@@ -1,0 +1,22 @@
+$primary-ff: "Open Sans", sans-serif;
+$secondary-ff: "Montserrat", sans-serif;
+$web-red: #c91212;
+$web-black: #333333;
+
+:root {
+  --slogan: clamp(1.63rem, calc(1.32rem + 1.52vw), 2.5rem);
+  --paragraph: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
+  --button-size: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  --youtube-icon-size: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
+  --hero-img: clamp(6.25rem, calc(-2.45rem + 43.48vw), 31.25rem);
+  --hero-padding: clamp(0.63rem, calc(-1.33rem + 9.78vw), 6.25rem);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $primary-ff;
+}
+
+@import "./hero.scss";
