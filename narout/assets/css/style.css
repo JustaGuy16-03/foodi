@@ -270,7 +270,7 @@ header .follow_us div .bi-twitter:hover {
   justify-content: flex-end;
   height: 20rem;
   background: url("/assets/images/our_storyimg 1.svg");
-  background-size: 100%;
+  background-size: cover;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
