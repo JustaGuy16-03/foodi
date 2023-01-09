@@ -1,0 +1,117 @@
+#about {
+  padding: 3rem 0;
+
+  main {
+    padding: clamp(0.94rem, calc(0.61rem + 1.63vw), 1.88rem) clamp(0.31rem, calc(0.10rem + 1.09vw), 0.94rem);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    .about_paragraph {
+      padding-top: 40px;
+
+      h1 {
+        color: $web-dark;
+        font-size: clamp(1.25rem, calc(1.14rem + 0.54vw), 1.56rem);
+        font-size: 1.56rem;
+        font-family: $primary-ff;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-family: $primary-ff;
+        font-size: 1rem;
+        color: $web-black;
+        margin: 0;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          font-size: 1rem;
+          color: $web-black;
+          padding: 0;
+          margin-top: 10px;
+
+          &::before {
+            content: "✓";
+            margin-right: 10px;
+            color: rgb(255, 28, 28);
+            font-weight: 600;
+          }
+        }
+      }
+
+      .counter_wrapper {
+        display: flex;
+        gap: 50px;
+        margin: 25px 0 20px 0;
+
+        .counter {
+          text-align: center;
+
+          span {
+            font-weight: 500;
+            font-size: 1.56rem;
+            color: $web-dark;
+          }
+
+          p {
+            font-weight: 500;
+            color: $web-black;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .readmore_btn {
+        color: #fff;
+        background-color: #16b33d;
+        border-radius: 4px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        padding: 15px 20px;
+        border: none;
+        margin-top: 15px;
+        transition: all 0.15s ease;
+
+        &:hover {
+          opacity: 0.95;
+        }
+
+        &:active {
+          opacity: 1;
+          background-color: #148f33;
+        }
+      }
+    }
+
+    .about_img {
+      height: 30rem;
+      border-radius: 10px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media (max-width: 820px) {
+  #about {
+    main {
+      grid-template-columns: 1fr;
+
+      .about_paragraph {
+        padding: 0px;
+      }
+    }
+  }
+}

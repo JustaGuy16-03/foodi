@@ -1,0 +1,177 @@
+$primary-ff: "Montserrat", sans-serif;
+$secondary-ff: "Open Sans", sans-serif;
+$web-red: #f11a1a;
+$web-black: #666666;
+$web-dark: #1d1d1d;
+
+:root {
+  --heading-fs: clamp(1.56rem, calc(1.35rem + 1.09vw), 2.19rem);
+  --heading-fs: 2.19rem;
+  --paragraph-fs: clamp(0.88rem, calc(0.83rem + 0.22vw), 1rem);
+  --paragraph-fs: 1rem;
+  scroll-padding-top: 5rem;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $primary-ff;
+}
+
+body {
+  min-width: 325px;
+  overflow-x: hidden;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ------------------------------------------------------------------------------
+ # section heading style
+ ------------------------------------------------------------------------------ */
+.section_heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 2rem 0;
+  text-align: center;
+
+  h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: $web-black;
+  }
+
+  h1 {
+    color: $web-dark;
+    font-size: 38px;
+    text-transform: capitalize;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+#preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  overflow: hidden;
+  background: #fff;
+  transition: all 0.6s ease-out;
+  width: 100%;
+  height: 100vh;
+}
+
+/*--------------------------------------------------------------
+# tooltip style
+--------------------------------------------------------------*/
+.tooltip {
+  .tooltip-arrow {
+    visibility: hidden;
+  }
+  .tooltip-inner {
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    background-color: #0000005b;
+    opacity: 0.8 !important;
+  }
+}
+@media (max-width: 991px) {
+  .tooltip {
+    visibility: hidden;
+  }
+}
+
+/*--------------------------------------------------------------
+# Scroll top button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 9999;
+  background-color: $web-red;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.4s;
+
+  i {
+    font-size: 28px;
+    color: #fdfdfd;
+    line-height: 0;
+  }
+
+  &::hover {
+    background: #da1717;
+    color: #fff;
+  }
+}
+
+.scroll-top.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------------------------
+ # navbar style
+ ------------------------------------------------------------------------------ */
+@import "./navbar.scss";
+
+/* ------------------------------------------------------------------------------
+ # home section style
+ ------------------------------------------------------------------------------ */
+@import "./hero.scss";
+
+/* ------------------------------------------------------------------------------
+ # about section style
+ ------------------------------------------------------------------------------ */
+@import "./about.scss";
+
+/* ------------------------------------------------------------------------------
+ # menu section style
+ ------------------------------------------------------------------------------ */
+@import "./menu.scss";
+
+/* ------------------------------------------------------------------------------
+ # service section style
+ ------------------------------------------------------------------------------ */
+@import "./services.scss";
+
+/* ------------------------------------------------------------------------------
+ # Review section style
+ ------------------------------------------------------------------------------ */
+@import "./testemonial.scss";
+
+/* ------------------------------------------------------------------------------
+ # Review section style
+ ------------------------------------------------------------------------------ */
+@import "./contact.scss";
