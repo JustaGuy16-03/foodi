@@ -1,0 +1,193 @@
+@mixin flexBox($gap, $direction, $justify, $align) {
+  display: flex;
+  gap: $gap;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+#home {
+  background-color: #f4f3ef;
+  overflow: hidden;
+  margin-bottom: 3rem;
+
+  main {
+    padding: clamp(1.25rem, calc(-0.27rem + 7.61vw), 5.63rem) 15px
+      clamp(2rem, calc(1.17rem + 4.13vw), 4.38rem) 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .hero-copy {
+      @include flexBox(0.5rem, column, center, flex-start);
+
+      h1 {
+        @include heading();
+        width: 80%;
+      }
+
+      p {
+        font-family: $primary-ff;
+        font-size: var(--paragraph-fs);
+        color: $web-black;
+      }
+
+      .buttons_wrapper {
+        width: 55%;
+        font-family: $primary-ff;
+        @include flexBox(2rem, row, space-between, center);
+
+        a {
+          text-decoration: none;
+        }
+
+        .action_b {
+          @include paragraph();
+          font-weight: 600;
+          text-transform: capitalize;
+          color: $web-red;
+          min-width: max-content;
+          cursor: pointer;
+          transition: all 0.15s ease;
+
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+
+        .order-btn {
+          z-index: 1;
+          padding: 12px 30px;
+          border: 2px solid $web-red;
+          border-radius: 10px;
+          background: $web-red;
+          color: #fcfcfc;
+
+          &:hover {
+            opacity: 0.9;
+          }
+
+          &:active {
+            background-color: #d61616;
+          }
+        }
+
+        .video-btn {
+          @include flexBox(10px, row, flex-start, center);
+
+          i {
+            font-size: clamp(2.19rem, calc(2.08rem + 0.54vw), 2.5rem);
+            // 40 to 35
+          }
+        }
+      }
+    }
+
+    .hero-image {
+      @include flexBox(0, row, flex-end, center);
+
+      img {
+        width: clamp(6.25rem, calc(-1.36rem + 38.04vw), 28.13rem);
+        filter: drop-shadow(
+          clamp(0.06rem, calc(-0.02rem + 0.43vw), 0.31rem)
+            clamp(0.06rem, calc(-0.02rem + 0.43vw), 0.31rem)
+            clamp(0.19rem, calc(0.04rem + 0.76vw), 0.63rem) #6161619d
+        );
+      }
+    }
+  }
+
+  .follow_us {
+    z-index: 100;
+    @include flexBox(0, row, center, center);
+
+    div {
+      background-color: #fff;
+      padding: clamp(0.13rem, calc(0.1rem + 0.11vw), 0.19rem)
+        clamp(0.63rem, calc(0.49rem + 0.65vw), 1rem);
+      border-top-left-radius: clamp(0.38rem, calc(0.29rem + 0.43vw), 0.63rem);
+      // 10 to 6
+      border-top-right-radius: clamp(0.38rem, calc(0.29rem + 0.43vw), 0.63rem);
+      // 10 to 6
+      box-shadow: 0 0px 15px #b6b6b6;
+      @include flexBox(
+        clamp(0.63rem, calc(0.49rem + 0.65vw), 1rem),
+        row,
+        center,
+        flex-end
+      );
+
+      .bi {
+        font-size: clamp(1.75rem, calc(1.66rem + 0.43vw), 2rem);
+        color: $web-black;
+        transition: all 0.15s ease;
+      }
+
+      .bi-facebook {
+        &:hover {
+          color: #3b5998;
+        }
+      }
+
+      .bi-whatsapp {
+        &:hover {
+          color: #25d366;
+        }
+      }
+
+      .bi-twitter {
+        &:hover {
+          color: #00acee;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  #home {
+    main {
+      grid-template-columns: 1fr;
+
+      .hero-copy {
+        align-items: center;
+        text-align: center;
+
+        .buttons_wrapper {
+          justify-content: center;
+        }
+      }
+
+      .hero-image {
+        justify-content: center;
+
+        img {
+          margin: 2rem 0 1rem 0;
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  #home {
+    main {
+      .hero-copy {
+        margin-top: 20px;
+
+        .buttons_wrapper {
+          flex-direction: column;
+          justify-content: center;
+          gap: 10px;
+        }
+      }
+
+      .hero-image {
+        img {
+          margin: 2rem 0 1rem 0;
+          width: 90%;
+        }
+      }
+    }
+  }
+}

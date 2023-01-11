@@ -1,0 +1,116 @@
+#menu {
+  background-color: #f4f3ef;
+  padding: 3rem 0;
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 4rem;
+    padding: clamp(0.94rem, calc(0.61rem + 1.63vw), 1.88rem) 15px;
+
+    .menu_item {
+      cursor: pointer;
+      position: relative;
+
+      .tag {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotate(90deg);
+        text-transform: uppercase;
+        font-size: clamp(0.75rem, calc(0.71rem + 0.22vw), 0.88rem);
+        // 14 to 12
+        letter-spacing: 1px;
+        padding: 4px 8px;
+        color: #f7f7f7;
+      }
+
+      .new {
+        background-color: #84bd00;
+      }
+
+      .sale-a {
+        left: 40px;
+        background-color: #ffc107;
+      }
+
+      .sale-b {
+        background-color: #ffc107;
+      }
+
+      .menu_img {
+        padding: 10px;
+        margin-bottom: 10px;
+
+        img {
+          width: 100%;
+          filter: drop-shadow(1px 1px 5px rgba(97, 97, 97, 0.404));
+          transition: all 0.5s ease;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+
+      .menu_desc {
+        text-align: center;
+
+        h1 {
+          @include heading_second();
+          margin: 0;
+        }
+
+        span {
+          @include paragraph();
+        }
+
+        .rate {
+          color: #ffbd14;
+        }
+
+        p {
+          color: #ff2f2f;
+          font-size: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
+          //18 to 16
+          font-weight: 500;
+
+          span {
+            text-decoration: line-through;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  #menu {
+    main {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  #menu {
+    main {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  #menu {
+    main {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+
+      .menu_item {
+        margin: 0 50px;
+      }
+    }
+  }
+}
